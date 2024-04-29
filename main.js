@@ -34,9 +34,10 @@ document.getElementById('btn-palindroma').addEventListener('click', palindroma);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 let scelta = prompt('scegliere tra PARI o DISPARI');
 let numeroUtente;
-
+let risultato;
 //Inserisci un numero compreseo tra 1 e 5 altrimenti inserisci di nuovo
 do {
     numeroUtente = parseInt(prompt('inserire un numero da 1 a 5'))
@@ -53,8 +54,19 @@ console.log(numeroComputer)
 const somma = numeroComputer + numeroUtente
 console.log(somma)
 
+//controllo se somma è PARI o DISPARI
 if (somma % 2 == 0) {
+    risultato = 'pari'
     console.log('pari')
 } else {
+    risultato = 'dispari'
     console.log('dispari')
+}
+
+//confronto risultato con sacelta
+if (scelta == risultato) {
+    console.log('hai vinto')
+} else {
+    console.log('hai perso')
+
 }
