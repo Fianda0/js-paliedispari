@@ -1,6 +1,7 @@
 function palindroma(parola) {
+    parola = prompt('inserire parola')
 
-    let risultato = 'palindroma'
+    let risultato = 'PALINDROMA'
 
     // Creo cicolo per confrontare le lettere della parola
     for (let i = 0; i < parola.length; i++) {
@@ -12,7 +13,8 @@ function palindroma(parola) {
 
         //confronoto le lettere, se non coincidono stampare risultato NON PALINDROMA
         if (x != y) {
-            risultato = 'non palindroma'
+            risultato = 'NON PALINDROMA'
+            document.getElementById('risultato-palindroma').innerText = `La parola ${parola} è ${risultato}`
             break
         }
 
@@ -22,10 +24,9 @@ function palindroma(parola) {
     }
     //Stampa Risultato
     console.log(risultato)
+    document.getElementById('risultato-palindroma').innerText = `La parola ${parola} è ${risultato}`
+
 }
 
-
-let parola = prompt('inserire parola')
-console.log(parola)
-console.log(parola.length)
+document.getElementById('btn-palindroma').addEventListener('click', palindroma);
 
