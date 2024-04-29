@@ -1,3 +1,4 @@
+//Funzione Palindroma
 function palindroma(parola) {
     parola = prompt('inserire parola')
 
@@ -28,5 +29,23 @@ function palindroma(parola) {
 
 }
 
+//Bottone per funzione palindroma
 document.getElementById('btn-palindroma').addEventListener('click', palindroma);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let scelta = prompt('scegliere tra PARI o DISPARI');
+let numeroUtente;
+
+//Inserisci un numero compreseo tra 1 e 5 altrimenti inserisci di nuovo
+do {
+    numeroUtente = prompt('inserire un numero da 1 a 5')
+} while (numeroUtente > 5 || numeroUtente < 0)
+
+// do {
+//     scelta = prompt('scegliere tra PARI o DISPARI')
+// } while (scelta != 'pari' || scelta != 'dispari')
+
+
+console.log(scelta)
+console.log(numeroUtente)
