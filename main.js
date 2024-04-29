@@ -34,39 +34,55 @@ document.getElementById('btn-palindroma').addEventListener('click', palindroma);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-let scelta = prompt('scegliere tra PARI o DISPARI');
-let numeroUtente;
-let risultato;
-//Inserisci un numero compreseo tra 1 e 5 altrimenti inserisci di nuovo
-do {
-    numeroUtente = parseInt(prompt('inserire un numero da 1 a 5'))
-} while (numeroUtente > 5 || numeroUtente < 0)
-
-// do {
-//     scelta = prompt('scegliere tra PARI o DISPARI')
-// } while (scelta != 'pari' || scelta != 'dispari')
-console.log(numeroUtente)
-
-const numeroComputer = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-console.log(numeroComputer)
-
-const somma = numeroComputer + numeroUtente
-console.log(somma)
-
-//controllo se somma è PARI o DISPARI
-if (somma % 2 == 0) {
-    risultato = 'pari'
-    console.log('pari')
-} else {
-    risultato = 'dispari'
-    console.log('dispari')
+//funzione random
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//confronto risultato con sacelta
-if (scelta == risultato) {
-    console.log('hai vinto')
-} else {
-    console.log('hai perso')
-
+//funzione controllo pari o dispari
+function pariDispari(somma) {
+    if (somma % 2 == 0) {
+        return 'pari'
+    } else {
+        return 'dispari'
+    }
 }
+
+document.getElementById('btn-paridispari').addEventListener('click', function () {
+
+
+    let scelta = prompt('scegliere tra PARI o DISPARI');
+    let numeroUtente;
+
+    //Inserisci un numero compreseo tra 1 e 5 altrimenti inserisci di nuovo
+    do {
+        numeroUtente = parseInt(prompt('inserire un numero da 1 a 5'))
+    } while (numeroUtente > 5 || numeroUtente < 0)
+
+    console.log(scelta)
+
+    // do {
+    //     scelta = prompt('scegliere tra PARI o DISPARI')
+    // } while (scelta != 'pari' || scelta != 'dispari')
+
+    //inserisco numero Comuter con la funzione random
+    const numeroComputer = random(1, 5)
+    console.log(numeroComputer)
+    console.log(numeroUtente)
+
+    //sommo i numeri
+    const somma = numeroComputer + numeroUtente
+    console.log(somma)
+
+    //Controllo se le somma è pari o dispari con la funzione
+    let risultato = pariDispari(somma);
+
+
+    //confronto risultato con sacelta
+    if (scelta == risultato) {
+        console.log('hai vinto')
+    } else {
+        console.log('hai perso')
+    }
+
+});
