@@ -39,13 +39,22 @@ let numeroUtente;
 
 //Inserisci un numero compreseo tra 1 e 5 altrimenti inserisci di nuovo
 do {
-    numeroUtente = prompt('inserire un numero da 1 a 5')
+    numeroUtente = parseInt(prompt('inserire un numero da 1 a 5'))
 } while (numeroUtente > 5 || numeroUtente < 0)
 
 // do {
 //     scelta = prompt('scegliere tra PARI o DISPARI')
 // } while (scelta != 'pari' || scelta != 'dispari')
-
-
-console.log(scelta)
 console.log(numeroUtente)
+
+const numeroComputer = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+console.log(numeroComputer)
+
+const somma = numeroComputer + numeroUtente
+console.log(somma)
+
+if (somma % 2 == 0) {
+    console.log('pari')
+} else {
+    console.log('dispari')
+}
