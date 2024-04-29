@@ -80,9 +80,15 @@ document.getElementById('btn-paridispari').addEventListener('click', function ()
 
     //confronto risultato con sacelta
     if (scelta == risultato) {
-        console.log('hai vinto')
+        document.getElementById('risultato-paridispari').innerText = `Hai Vinto`
     } else {
-        console.log('hai perso')
+        document.getElementById('risultato-paridispari').innerText = `Hai Perso`
     }
+
+    document.getElementById('n-my').innerText = `Il tuo numero è: ${numeroUtente}`
+    document.getElementById('n-pc').innerText = `Il numero del pc è: ${numeroComputer}`
+    document.getElementById('somma').innerText = `La somma è ${somma} ed è ${risultato}`
+    document.getElementById('scelta').innerText = `Hai scelto: ${scelta}`
+
 
 });
