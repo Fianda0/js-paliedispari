@@ -15,7 +15,6 @@ function palindroma(parola) {
         //confronoto le lettere, se non coincidono stampare risultato NON PALINDROMA
         if (x != y) {
             risultato = 'NON PALINDROMA'
-            document.getElementById('risultato-palindroma').innerText = `La parola ${parola} è ${risultato}`
             break
         }
 
@@ -51,19 +50,20 @@ function pariDispari(somma) {
 document.getElementById('btn-paridispari').addEventListener('click', function () {
 
 
-    let scelta = prompt('scegliere tra PARI o DISPARI');
     let numeroUtente;
+
+    //Inserisci Pari o Dispari finche non è giusto
+    do {
+        scelta = prompt('scegliere tra PARI o DISPARI')
+    } while (scelta != 'pari' && scelta != 'dispari')
 
     //Inserisci un numero compreseo tra 1 e 5 altrimenti inserisci di nuovo
     do {
         numeroUtente = parseInt(prompt('inserire un numero da 1 a 5'))
-    } while (numeroUtente > 5 || numeroUtente < 0)
+    } while (numeroUtente > 5 || numeroUtente < 0 || isNaN(numeroUtente))
 
     console.log(scelta)
 
-    // do {
-    //     scelta = prompt('scegliere tra PARI o DISPARI')
-    // } while (scelta != 'pari' || scelta != 'dispari')
 
     //inserisco numero Comuter con la funzione random
     const numeroComputer = random(1, 5)
